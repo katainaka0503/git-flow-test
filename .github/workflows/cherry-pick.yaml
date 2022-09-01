@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - develop
-    types: ["closed"]
 
 jobs:
   cherry_pick:
