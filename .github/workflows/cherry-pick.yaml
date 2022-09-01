@@ -1,8 +1,9 @@
 name: PR for release branch
 on:
-  push:
+  pull_request:
     branches:
       - develop
+    types: ["closed"]
 
 jobs:
   cherry_pick:
