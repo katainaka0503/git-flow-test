@@ -1,0 +1,20 @@
+name: PR for release branch
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  cherry_pick:
+    runs-on: ubuntu-latest
+    name: Cherry pick into master
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Cherry pick into master
+        uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
+        with:
+          branch: master
+          labels: |
+            cherry-pick
