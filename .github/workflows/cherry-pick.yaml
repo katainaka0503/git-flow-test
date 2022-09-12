@@ -16,6 +16,7 @@ jobs:
           fetch-depth: 0
       - name:
         run: echo ${{ github.event.pull_request.user.login }}
+
       - name: Cherry pick into master
         uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
         with:
