@@ -14,11 +14,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name:
+        run: echo ${{ github.event.pull_request.user.login }}
+
       - name: Cherry pick into master
         uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
         with:
           branch: master
+          assignees: |
+            ${{ github.event.pull_request.user.login }}
           labels: |
             cherry-pick
+          title: "[cherry-pick] ${{ github.context.payload.pull_request.title }}"
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
