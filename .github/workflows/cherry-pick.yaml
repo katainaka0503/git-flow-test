@@ -25,6 +25,7 @@ jobs:
             ${{ github.event.pull_request.user.login }}
           labels: |
             cherry-pick
-          title: [cherry-pick] ${{ github.context.payload.pull_request.title }}
+          title: "[cherry-pick] ${{ github.context.payload.pull_request.title }}"
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
